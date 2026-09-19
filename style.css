@@ -1,0 +1,1993 @@
+/* ==========================================================================
+   HOSPITAL GENERAL DE AGUDOS DR. JOSÉ MARÍA RAMOS MEJÍA
+   Hoja de Estilos Principal • Portal Institucional Moderno
+   ========================================================================== */
+
+:root {
+  /* Paleta Institucional Premium */
+  --navy-dark: #07192f;
+  --navy: #0b2545;
+  --navy-light: #133a68;
+  --primary: #0d9488;         /* Teal Médico */
+  --primary-dark: #0f766e;
+  --primary-light: #14b8a6;
+  --accent: #0284c7;          /* Azul Sanitario */
+  --accent-light: #38bdf8;
+  --urgent: #dc2626;          /* Rojo Emergencia */
+  --urgent-dark: #b91c1c;
+
+  /* Superficies y Neutros */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --border: #e2e8f0;
+  --border-light: #edf2f7;
+
+  /* Tipografía */
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+
+  /* Efectos y Sombras */
+  --shadow-sm: 0 2px 4px rgba(11, 37, 69, 0.05);
+  --shadow-md: 0 6px 12px -2px rgba(11, 37, 69, 0.08);
+  --shadow-lg: 0 14px 28px -4px rgba(11, 37, 69, 0.12);
+  --shadow-xl: 0 24px 48px -8px rgba(11, 37, 69, 0.16);
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --radius: 12px;
+  --radius-lg: 18px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   TOP BAR (URGENCIAS)
+   ========================================================================== */
+.top-bar {
+  background-color: var(--navy-dark);
+  color: var(--white);
+  font-size: 0.825rem;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 1050;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-container {
+  max-width: 1680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.emergency-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fca5a5;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: pulseBeacon 1.6s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.top-contacts {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #cbd5e1;
+}
+
+.top-contacts .link-light {
+  color: #5eead4;
+  font-weight: 600;
+}
+.top-contacts .sep {
+  opacity: 0.4;
+}
+
+/* ==========================================================================
+   NAVBAR INSTITUCIONAL (CENTRADO PERFECTO Y PROLIJO)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+.nav-container {
+  max-width: 1720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-link {
+  text-decoration: none;
+  justify-self: start;
+  min-width: max-content;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: max-content;
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.logo-link:hover .logo-img {
+  transform: scale(1.04);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.logo-text h1 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.15rem;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.logo-text p {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-item {
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.08);
+}
+
+.nav-item.active {
+  color: #ffffff !important;
+  background-color: #059669 !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+  font-weight: 700;
+}
+
+.nav-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-outline-teal {
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.btn-outline-teal:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--navy);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger::before, .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--navy);
+  left: 0;
+  transition: var(--transition);
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { bottom: -7px; }
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 1.5rem 3rem;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.45);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(7, 25, 47, 0.85) 0%, rgba(13, 148, 136, 0.6) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  color: #5eead4;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  color: var(--white);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: var(--white);
+  backdrop-filter: blur(6px);
+}
+.btn-outline-light:hover {
+  background: var(--white);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--white);
+}
+
+.btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-xs {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+}
+
+/* Tarjetas de Acceso Rápido en Hero */
+.quick-access {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.access-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+.access-card:hover {
+  transform: translateY(-4px);
+  background: var(--white);
+  box-shadow: var(--shadow-xl);
+}
+
+.access-card.urgent {
+  border-left: 4px solid var(--urgent);
+}
+
+.access-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.access-text h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+
+.access-text p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   STATS STRIP
+   ========================================================================== */
+.stats-strip {
+  background: var(--navy);
+  color: var(--white);
+  padding: 2.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #5eead4;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   SECCIONES GENERALES
+   ========================================================================== */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section.bg-light {
+  background-color: var(--surface-alt);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   BUSCADOR Y ESPECIALIDADES
+   ========================================================================== */
+.search-container {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.search-bar:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+}
+
+.search-icon {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  opacity: 0.6;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text);
+  background: transparent;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-muted);
+  padding: 0.25rem;
+}
+
+.search-counter {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  padding-right: 1rem;
+}
+
+/* Píldoras de Filtro */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.pill {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--navy);
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pill.active {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Grid de Especialidades */
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.specialty-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.specialty-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.badge-category {
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.spec-icon {
+  font-size: 1.25rem;
+}
+
+.spec-title {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.spec-loc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.spec-meta {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.spec-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-outline-dark {
+  border: 1.5px solid var(--border);
+  color: var(--navy);
+  background: var(--surface);
+}
+.btn-outline-dark:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   GUÍA DEL PACIENTE
+   ========================================================================== */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.guide-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.guide-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.guide-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-icon {
+  font-size: 1.8rem;
+}
+
+.guide-header h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.guide-summary {
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.guide-details {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ÁREA PROGRAMÁTICA & SPLIT LAYOUTS
+   ========================================================================== */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.cesac-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.cesac-card {
+  background: var(--surface-alt);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border-left: 3px solid var(--primary);
+}
+
+.cesac-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--navy);
+}
+
+.cesac-card p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.rounded-shadow-img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.mt-4 { margin-top: 1.5rem; }
+
+/* ==========================================================================
+   ACADÉMICO / DOCENCIA & INVESTIGACIÓN
+   ========================================================================== */
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.academic-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.academic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.academic-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: var(--navy);
+}
+
+.academic-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.link-arrow {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   REVISTA MÉDICA
+   ========================================================================== */
+.journal-feature {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.journal-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+  padding-right: 2rem;
+}
+
+.journal-badge {
+  display: inline-block;
+  background: rgba(2, 132, 199, 0.1);
+  color: var(--accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.journal-intro h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.journal-editions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.journal-card {
+  background: var(--surface-alt);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.journal-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.journal-card-top h4 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.journal-badge-small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.journal-articles {
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.journal-articles li {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.journal-articles li:last-child {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+
+.art-authors {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   DIRECTORIO TELEFÓNICO
+   ========================================================================== */
+.directory-container {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.directory-search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--surface-alt);
+  border-radius: 50px;
+  padding: 0.6rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.directory-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  margin-left: 0.75rem;
+}
+
+.table-responsive {
+  max-height: 440px;
+  overflow-y: auto;
+}
+
+.directory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.directory-table th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-alt);
+  color: var(--navy);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border);
+}
+
+.directory-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.directory-table tr:hover td {
+  background-color: rgba(13, 148, 136, 0.03);
+}
+
+.interno-tag {
+  background: rgba(11, 37, 69, 0.08);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   FOTOGALERÍA PATRIMONIAL
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 220px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 25, 47, 0.9) 0%, rgba(7, 25, 47, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  color: var(--white);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay h4 {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.gallery-overlay p {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gallery-zoom-btn {
+  font-size: 0.75rem;
+  color: #5eead4;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CÓMO LLEGAR & TRANSPORTES
+   ========================================================================== */
+.transport-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.transport-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.transport-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.transport-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.map-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--border);
+}
+
+/* ==========================================================================
+   FOOTER INSTITUCIONAL
+   ========================================================================== */
+.footer {
+  background-color: var(--navy-dark);
+  color: #cbd5e1;
+  padding-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  height: 46px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-brand h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.footer-brand p {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links, .footer-phones {
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+.footer-links li, .footer-phones li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a, .footer-phones a {
+  color: #cbd5e1;
+}
+.footer-links a:hover, .footer-phones a:hover {
+  color: #5eead4;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   MODALES (ESPECIALIDAD, DONACIÓN, LIGHTBOX)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 25, 47, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--surface-alt);
+  border: none;
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition: var(--transition);
+}
+.modal-close:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Modal Especialidad */
+.modal-specialty-content {
+  max-width: 860px;
+}
+
+.specialty-details-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.detail-block {
+  margin-bottom: 1.25rem;
+}
+
+.detail-block h4 {
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.detail-block p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.detail-actions {
+  margin-top: 1.5rem;
+}
+
+.specialty-plan-col h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.plan-img-wrapper {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.plan-img-wrapper img {
+  max-height: 260px;
+  margin: 0 auto 0.5rem;
+  border-radius: 6px;
+}
+
+.plan-caption {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Donar Modal */
+.donar-info-box {
+  background: rgba(13, 148, 136, 0.08);
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.check-list {
+  list-style: none;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+
+.check-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Lightbox Modal */
+.lightbox-overlay .lightbox-content {
+  background: transparent;
+  max-width: 960px;
+  padding: 0;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-height: 75vh;
+  margin: 0 auto 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xl);
+}
+
+.lightbox-caption {
+  color: var(--white);
+}
+
+.lightbox-caption h3 {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.lightbox-caption p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.lightbox-close {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .nav-container {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+  .nav-links {
+    gap: 0.2rem;
+  }
+  .nav-item {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .journal-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-intro {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .specialty-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    display: none !important;
+  }
+
+  .top-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-mobile-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+    box-shadow: var(--shadow-lg);
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links .nav-item.active {
+    background-color: #059669 !important;
+    color: #ffffff !important;
+    border-left: 4px solid #047857;
+  }
+
+  /* Especialidades en móvil: botones uno abajo del otro como Convocatoria Abierta */
+  .spec-card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .spec-card-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cesac-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   NOTICIAS Y ACTUALIDAD 2026
+   ========================================================================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.news-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  font-size: 0.75rem;
+}
+
+.news-tag {
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary-dark);
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.news-date {
+  color: var(--text-muted);
+}
+
+.news-title {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.news-summary {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.news-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.news-link {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   REVISTA CIENTÍFICA 2026 & PREMIO BIENAL
+   ========================================================================== */
+.journal-alert-banner {
+  background: linear-gradient(135deg, #0b2545 0%, #0f766e 100%);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  flex-wrap: wrap;
+}
+
+.award-badge-icon {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.award-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.award-text h3 {
+  color: #5eead4;
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.award-text p {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.award-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.journal-card.journal-current-year {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.12);
+}
+
+.journal-status-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  background: rgba(11, 37, 69, 0.08);
+  color: var(--navy);
+}
+
+.pulse-pill {
+  background: #0d9488;
+  color: #ffffff;
+}
+
+.journal-award-notice {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+}
+
+/* ==========================================================================
+   SECCIÓN: AUTORIDADES INSTITUCIONALES
+   ========================================================================== */
+.authorities-section {
+  background-color: var(--surface-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.authorities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .authorities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .authorities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.authority-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 2.2rem 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.authority-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.authority-card.featured-authority::before {
+  height: 5px;
+  background: linear-gradient(90deg, #0284c7 0%, #0d9488 100%);
+}
+
+.authority-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(13, 148, 136, 0.35);
+}
+
+.authority-card:hover::before {
+  height: 6px;
+  opacity: 1;
+}
+
+.authority-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary-dark);
+  margin-bottom: 1.25rem;
+}
+
+.authority-avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b2545 0%, #0d9488 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 16px rgba(11, 37, 69, 0.12);
+  border: 3px solid #ffffff;
+  transition: var(--transition);
+}
+
+.authority-card:hover .authority-avatar {
+  transform: scale(1.06);
+}
+
+.avatar-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.authority-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.authority-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3;
+}
+
+.authority-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.authority-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.authority-footer {
+  width: 100%;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  color: var(--navy);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ==========================================================================
+   PAGINACIÓN DE ESPECIALIDADES MÉDICAS
+   ========================================================================== */
+.specialties-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.specialties-pagination .page-btn {
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--navy);
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialties-pagination .page-btn:hover:not(:disabled) {
+  border-color: #059669;
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.05);
+}
+
+.specialties-pagination .page-btn.active {
+  background-color: #059669;
+  color: #ffffff;
+  border-color: #059669;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.specialties-pagination .page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.specialties-pagination .page-info {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 0.5rem;
+}
+
+/* ==========================================================================
+   SECCIÓN CONTACTO INTEGRAL (DIRECTORIO + UBICACIÓN)
+   ========================================================================== */
+.contacto-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.contacto-bloque {
+  scroll-margin-top: 90px;
+}
+
+.contacto-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 3.5rem auto;
+  max-width: 1100px;
+}
+
+/* ==========================================================================
+   CORREO ELECTRÓNICO SEGURO / CIFRADO CONTRA SPAMBOTS
+   ========================================================================== */
+.safe-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  color: var(--navy);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.safe-email-btn:hover {
+  background: #ecfdf5;
+  border-color: #059669;
+  color: #059669;
+}
+
+.safe-email-revealed {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #047857;
+  cursor: pointer;
+}
+
+.safe-email-btn .email-action-icon {
+  font-size: 0.85rem;
+}
+
+
