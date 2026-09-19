@@ -529,6 +529,45 @@
           <!-- Inyectado dinámicamente por JS con los volúmenes actualizados -->
         </div>
       </div>
+
+      <!-- MÓDULO INTEGRADO: CONSULTA EN VIVO A LILACS / BVS (BIREME - OPS/OMS) -->
+      <div class="lilacs-search-card">
+        <div class="lilacs-header">
+          <div class="lilacs-brand">
+            <span class="lilacs-icon">🌐</span>
+            <div>
+              <span class="lilacs-tag">Biblioteca Virtual en Salud • BIREME / OPS / OMS</span>
+              <h3 class="lilacs-title">Búsqueda en Vivo de Publicaciones en LILACS (iAHx)</h3>
+            </div>
+          </div>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC"
+            target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+            <span>🔬 Ver Todos en LILACS en Vivo ↗</span>
+          </a>
+        </div>
+
+        <p class="lilacs-desc">
+          Consulte directamente en el motor <strong>iAHx (Apache Solr)</strong> de la Biblioteca Virtual en Salud todas las investigaciones científicas, reportes clínicos y tesis de profesionales del <strong>Hospital Ramos Mejía</strong> indizadas en la base de datos continental <strong>LILACS</strong>.
+        </p>
+
+        <form id="lilacs-search-form" class="lilacs-form" action="https://pesquisa.bvsalud.org/portal/" method="GET" target="_blank">
+          <div class="lilacs-input-group">
+            <span class="input-icon">🔍</span>
+            <input type="text" id="lilacs-query-input" placeholder="Buscar por patología, fármaco o especialidad (ej: ACV, diabetes, neurología, pediatría, covid)..." />
+            <button type="submit" class="btn btn-primary btn-search-lilacs">Buscar en LILACS</button>
+          </div>
+        </form>
+
+        <div class="lilacs-quick-topics">
+          <span class="quick-label">Consultas frecuentes del hospital:</span>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22+AND+neurologia&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC" target="_blank" rel="noopener noreferrer" class="topic-pill">🧠 Neurología & ACV</a>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22+AND+cardiologia&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC" target="_blank" rel="noopener noreferrer" class="topic-pill">❤️ Cardiología</a>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22+AND+cirugia&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC" target="_blank" rel="noopener noreferrer" class="topic-pill">🩺 Cirugía General</a>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22+AND+pediatria&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC" target="_blank" rel="noopener noreferrer" class="topic-pill">👶 Pediatría</a>
+          <a href="https://pesquisa.bvsalud.org/portal/?q=%22Hospital+Ramos+Mej%C3%ADa%22+AND+dermatologia&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC" target="_blank" rel="noopener noreferrer" class="topic-pill">🔬 Dermatología</a>
+          <a href="https://lilacs.bvsalud.org/es/" target="_blank" rel="noopener noreferrer" class="topic-pill pill-info">ℹ️ Criterios de Selección LILACS ↗</a>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -462,6 +462,23 @@ function initJournal() {
 
     container.appendChild(item);
   });
+
+  // Buscador interactivo a LILACS / BVS con motor iAHx (Apache Solr)
+  const lilacsForm = document.getElementById('lilacs-search-form');
+  const lilacsInput = document.getElementById('lilacs-query-input');
+  if (lilacsForm && lilacsInput) {
+    lilacsForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = lilacsInput.value.trim();
+      let query = '"Hospital Ramos Mejía"';
+      if (val) {
+        query += ` AND ${val}`;
+      }
+      const encodedQuery = encodeURIComponent(query);
+      const url = `https://pesquisa.bvsalud.org/portal/?q=${encodedQuery}&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  }
 }
 
 /* ==========================================================================
