@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initJournal();
   initDirectory();
   initGallery();
+  initHospitalHistory();
   initModals();
 });
 
@@ -66,6 +67,7 @@ function initNavbar() {
     'docencia',
     'revista',
     'galeria',
+    'historia',
     'contacto'
   ];
 
@@ -164,7 +166,10 @@ function initSpecialties() {
         item.title.toLowerCase().includes(q) ||
         (item.chief && item.chief.toLowerCase().includes(q)) ||
         (item.location && item.location.toLowerCase().includes(q)) ||
-        (item.category && item.category.toLowerCase().includes(q));
+        (item.category && item.category.toLowerCase().includes(q)) ||
+        (item.historicalOrigin && item.historicalOrigin.toLowerCase().includes(q)) ||
+        (item.historicalFigures && item.historicalFigures.some(f => f.toLowerCase().includes(q))) ||
+        (item.pioneeringMilestones && item.pioneeringMilestones.some(m => m.toLowerCase().includes(q)));
 
       return matchesCat && matchesQuery;
     });
@@ -177,7 +182,7 @@ function initSpecialties() {
         <div class="no-results" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: #64748b;">
           <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🔍</span>
           <h3>No encontramos servicios que coincidan con "${searchQuery}"</h3>
-          <p>Pruebe buscando por término general (ej: "Clínica", "Cirugía", "Laboratorio", "Pediatría") o consulte al conmutador <strong>4127-0200</strong>.</p>
+          <p>Pruebe buscando por especialidad, patología o referente histórico (ej: "Cardiología", "Rosenbaum", "Grierson", "Justo").</p>
         </div>
       `;
       return;
@@ -196,13 +201,18 @@ function initSpecialties() {
       card.className = 'specialty-card';
       card.dataset.id = spec.id;
 
+      const isPioneer = spec.pioneeringMilestones && spec.pioneeringMilestones.length > 0;
+      const chiefHtml = spec.chief ? `<div class="spec-chief">👨‍⚕️ <strong>Jefatura:</strong> ${spec.chief}</div>` : '';
+      const pioneerBadge = isPioneer ? `<span class="badge-pioneer" title="Servicio con hitos pioneros en la medicina">⭐ Pionero</span>` : '';
+
       card.innerHTML = `
         <div class="card-top">
           <span class="badge-category">${spec.category}</span>
-          <span class="spec-icon">🏥</span>
+          ${pioneerBadge}
         </div>
         <h3 class="spec-title">${spec.title}</h3>
-        <p class="spec-loc">${spec.location ? spec.location.slice(0, 100) + '...' : 'Pabellón central'}</p>
+        ${chiefHtml}
+        <p class="spec-loc">${spec.location ? spec.location.slice(0, 95) + '...' : 'Pabellón central'}</p>
         <div class="spec-meta">
           <span class="spec-phone">📞 <strong>Contacto:</strong> ${spec.phone}</span>
         </div>
@@ -376,6 +386,48 @@ function openSpecialtyModal(spec) {
     planImg.style.display = 'block';
   } else {
     planImg.src = '/de/matriz.png';
+  }
+
+  // Sección Histórica e Hitos Pioneros
+  const histBlock = document.getElementById('modal-spec-history-block');
+  const histOrigin = document.getElementById('modal-spec-history-origin');
+  const milestonesBox = document.getElementById('modal-spec-milestones-box');
+  const milestonesList = document.getElementById('modal-spec-milestones');
+  const figuresBox = document.getElementById('modal-spec-figures-box');
+  const figuresContainer = document.getElementById('modal-spec-figures');
+
+  const hasHistory = !!(spec.historicalOrigin || (spec.pioneeringMilestones && spec.pioneeringMilestones.length));
+
+  if (histBlock) {
+    if (hasHistory) {
+      histBlock.style.display = 'block';
+      if (histOrigin) {
+        histOrigin.textContent = spec.historicalOrigin || '';
+        histOrigin.style.display = spec.historicalOrigin ? 'block' : 'none';
+      }
+
+      if (milestonesBox && milestonesList) {
+        if (spec.pioneeringMilestones && spec.pioneeringMilestones.length) {
+          milestonesBox.style.display = 'block';
+          milestonesList.innerHTML = spec.pioneeringMilestones.map(m => `<li>${m}</li>`).join('');
+        } else {
+          milestonesBox.style.display = 'none';
+          milestonesList.innerHTML = '';
+        }
+      }
+
+      if (figuresBox && figuresContainer) {
+        if (spec.historicalFigures && spec.historicalFigures.length) {
+          figuresBox.style.display = 'block';
+          figuresContainer.innerHTML = spec.historicalFigures.map(f => `<span class="figure-tag">👨‍⚕️ ${f}</span>`).join('');
+        } else {
+          figuresBox.style.display = 'none';
+          figuresContainer.innerHTML = '';
+        }
+      }
+    } else {
+      histBlock.style.display = 'none';
+    }
   }
 
   modal.classList.add('active');
@@ -781,4 +833,127 @@ function initDynamicInstitutionData() {
 
   const currentYearSpan = document.getElementById('current-year');
   if (currentYearSpan) currentYearSpan.textContent = currentYear;
+}
+
+/* ==========================================================================
+   HISTORIA, PATRIMONIO Y CULTURA (LIBRO OFICIAL)
+   ========================================================================== */
+function initHospitalHistory() {
+  const container = document.getElementById('history-tab-content');
+  const tabBtns = document.querySelectorAll('.history-tab-btn');
+  if (!container || !HOSPITAL_DATA || !HOSPITAL_DATA.history) return;
+
+  const history = HOSPITAL_DATA.history;
+  let activeTab = 'nobel';
+
+  function renderTab(tabKey) {
+    container.innerHTML = '';
+
+    if (tabKey === 'nobel') {
+      const laureates = history.nobelLaureates || [];
+      const grid = document.createElement('div');
+      grid.className = 'nobel-grid';
+
+      laureates.forEach(l => {
+        const card = document.createElement('article');
+        card.className = 'nobel-card';
+        card.innerHTML = `
+          <div class="nobel-header">
+            <span class="nobel-icon">${l.icon}</span>
+            <span class="nobel-badge">${l.badge}</span>
+          </div>
+          <h3 class="nobel-name">${l.name}</h3>
+          <span class="nobel-years">${l.years}</span>
+          <div class="nobel-role">🏥 <strong>Paso por el Ramos Mejía:</strong> ${l.roleHospital}</div>
+          <p class="nobel-desc">${l.desc}</p>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    } else if (tabKey === 'cultura') {
+      const cultureItems = history.cultureAndTango || [];
+      const grid = document.createElement('div');
+      grid.className = 'culture-grid';
+
+      cultureItems.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'culture-card';
+        card.innerHTML = `
+          <div class="culture-header">
+            <span class="culture-icon">${item.icon}</span>
+            <span class="culture-year">${item.year}</span>
+          </div>
+          <h3 class="culture-title">${item.title}</h3>
+          <p class="culture-desc">${item.desc}</p>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    } else if (tabKey === 'memoria') {
+      const mem = history.memory;
+      if (!mem) return;
+      const memCard = document.createElement('div');
+      memCard.className = 'memory-memorial-box';
+      memCard.innerHTML = `
+        <div class="memory-header">
+          <span class="memory-symbol">🕊️</span>
+          <div>
+            <span class="memory-sub">${mem.established} • ${mem.recognition}</span>
+            <h3 class="memory-title">${mem.title}</h3>
+          </div>
+        </div>
+        <p class="memory-intro">${mem.desc}</p>
+        <div class="memory-victims-grid">
+          ${mem.victims.map(v => `
+            <div class="victim-card">
+              <span class="victim-candle">🕯️</span>
+              <div class="victim-info">
+                <strong class="victim-name">${v.name}</strong>
+                <span class="victim-role">${v.role}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="memory-note">
+          <p>${mem.survivorNote}</p>
+        </div>
+      `;
+      container.appendChild(memCard);
+    } else if (tabKey === 'directores') {
+      const timeline = history.directorsTimeline || [];
+      const wrap = document.createElement('div');
+      wrap.className = 'directors-timeline-wrap';
+      wrap.innerHTML = `
+        <div class="directors-intro">
+          <h3>Nómina Histórica de Directores y Conducción Hospitalaria</h3>
+          <p>Reconstrucción historiográfica documentada en el libro oficial desde la fundación del Lazareto San Roque (1869) hasta la conducción actual.</p>
+        </div>
+        <div class="directors-grid">
+          ${timeline.map(era => `
+            <div class="era-card">
+              <div class="era-badge">${era.period}</div>
+              <h4 class="era-title">${era.era}</h4>
+              <ul class="directors-list">
+                ${era.list.map(d => `<li>${d}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      container.appendChild(wrap);
+    }
+  }
+
+  // Bind click events on tab buttons
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTab = btn.dataset.tab;
+      renderTab(activeTab);
+    });
+  });
+
+  // Render initial tab
+  renderTab(activeTab);
 }

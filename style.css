@@ -2164,4 +2164,594 @@ img {
   font-size: 0.85rem;
 }
 
+/* ==========================================================================
+   SECCIÓN HISTORIA, PATRIMONIO Y CULTURA (LIBRO OFICIAL)
+   ========================================================================== */
+.history-book-banner {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  padding: 3rem 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.history-book-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.book-cover-mockup {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.book-cover-mockup:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.book-cover-mockup .book-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+
+.book-cover-mockup .book-inst {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-cover-mockup h3 {
+  font-size: 1.35rem;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.book-cover-mockup .book-sub {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.book-cover-mockup .book-authors {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.book-cover-mockup .book-authors strong {
+  display: block;
+  color: #f1f5f9;
+  margin-top: 0.2rem;
+}
+
+.book-banner-content h3 {
+  font-size: 1.85rem;
+  color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.book-banner-content p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.book-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.book-meta-pills .pill-badge {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+}
+
+.book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.book-license-note {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* History Tabs Nav */
+.history-tabs-container {
+  margin-top: 2rem;
+}
+
+.history-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.history-tab-btn {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--navy);
+  padding: 0.75rem 1.4rem;
+  border-radius: 30px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.history-tab-btn:hover {
+  border-color: var(--primary);
+  background: #f0fdfa;
+  transform: translateY(-2px);
+}
+
+.history-tab-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+/* Nobel Grid */
+.nobel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.nobel-card {
+  background: var(--surface);
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.nobel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: #cbd5e1;
+}
+
+.nobel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nobel-icon {
+  font-size: 2.2rem;
+}
+
+.nobel-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+}
+
+.nobel-name {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.nobel-years {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.nobel-role {
+  background: #f8fafc;
+  border-left: 3px solid var(--primary);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.nobel-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* Culture Grid */
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+.culture-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.culture-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.culture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.culture-icon {
+  font-size: 1.8rem;
+}
+
+.culture-year {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+}
+
+.culture-title {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.culture-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Memory Box */
+.memory-memorial-box {
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid #1e293b;
+}
+
+.memory-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.25rem;
+}
+
+.memory-symbol {
+  font-size: 2.75rem;
+}
+
+.memory-sub {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  display: block;
+}
+
+.memory-title {
+  font-size: 1.65rem;
+  color: #ffffff;
+}
+
+.memory-intro {
+  font-size: 0.98rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.memory-victims-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.victim-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  transition: var(--transition);
+}
+
+.victim-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.victim-candle {
+  font-size: 1.4rem;
+}
+
+.victim-name {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.victim-role {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.memory-note {
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid #f59e0b;
+  padding: 1.1rem 1.4rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Directors Timeline */
+.directors-timeline-wrap .directors-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+}
+
+.directors-intro h3 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.directors-intro p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.directors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.era-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.era-badge {
+  display: inline-block;
+  background: #f0fdfa;
+  color: var(--primary);
+  border: 1px solid #ccfbf1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.era-title {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
+.directors-list {
+  list-style: none;
+  font-size: 0.84rem;
+  color: #475569;
+}
+
+.directors-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
+}
+
+/* Modal Specialty History Block */
+.modal-history-section {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid var(--border);
+}
+
+.modal-history-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.history-badge {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+}
+
+.modal-history-header h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.modal-history-origin {
+  font-size: 0.9rem;
+  color: #334155;
+  background: #f8fafc;
+  border-left: 3px solid var(--accent);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.modal-milestones-box {
+  margin-bottom: 1.25rem;
+}
+
+.modal-milestones-box h4,
+.modal-figures-box h4 {
+  font-size: 0.88rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.milestones-list {
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.milestones-list li {
+  margin-bottom: 0.4rem;
+}
+
+.figures-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.figure-tag {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 14px;
+}
+
+/* Specialty Card Enhancements */
+.badge-pioneer {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.spec-chief {
+  font-size: 0.82rem;
+  color: var(--primary-dark);
+  font-weight: 500;
+  margin-top: 0.2rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+/* Responsive Styles for History Section */
+@media (max-width: 900px) {
+  .history-book-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .book-cover-mockup {
+    min-height: auto;
+  }
+}
+
 

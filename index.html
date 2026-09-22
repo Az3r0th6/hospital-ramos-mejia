@@ -137,6 +137,7 @@
         <li><a href="#docencia" class="nav-item">Docencia e Investigación</a></li>
         <li><a href="#revista" class="nav-item">Revista Médica</a></li>
         <li><a href="#galeria" class="nav-item">Recorrido</a></li>
+        <li><a href="#historia" class="nav-item">Historia & Cultura</a></li>
         <li><a href="#contacto" class="nav-item">Contacto</a></li>
       </ul>
 
@@ -589,6 +590,82 @@
     </div>
   </section>
 
+  <!-- SECCIÓN: HISTORIA, PATRIMONIO Y CULTURA -->
+  <section id="historia" class="section">
+    <div class="section-container">
+      <div class="text-center">
+        <h4 class="section-subtitle">Memoria, Patrimonio y Aportes Científicos</h4>
+        <h2 class="section-title">Historia y Cultura del Hospital Ramos Mejía</h2>
+        <p class="section-desc">
+          Más de 150 años de compromiso con la salud pública: desde el Lazareto San Roque frente al cólera y la fiebre amarilla, hasta ser cuna de la medicina argentina, sede de dos Premios Nobel y emblema de la cultura popular porteña.
+        </p>
+      </div>
+
+      <!-- BANNER DEL LIBRO OFICIAL CON DESCARGA DIRECTA -->
+      <div class="history-book-banner">
+        <div class="book-banner-visual">
+          <div class="book-cover-mockup">
+            <span class="book-badge">Libro Oficial • Edición 2026</span>
+            <div class="book-title-wrap">
+              <span class="book-inst">HOSPITAL RAMOS MEJÍA</span>
+              <h3>Del Lazareto San Roque al Hospital Ramos Mejía</h3>
+              <p class="book-sub">Historia del hospital y sus servicios (1868–2026)</p>
+            </div>
+            <div class="book-authors">
+              <span>Editores:</span>
+              <strong>Dr. Nicolás Alonso • Dr. Martín Sívori</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-banner-content">
+          <div class="book-meta-pills">
+            <span class="pill-badge">📘 185 Páginas</span>
+            <span class="pill-badge">🏛️ 59 Capítulos</span>
+            <span class="pill-badge">📸 Archivo General de la Nación</span>
+            <span class="pill-badge">📜 EPUB & PDF</span>
+          </div>
+          <h3>Monumento Historiográfico de la Salud Pública Argentina</h3>
+          <p>
+            Una rigurosa investigación documental que recopila el origen de cada división médica y quirúrgica, los relatos de sus maestros fundadores, testimonios orales de sus trabajadores y el aporte inquebrantable del hospital a la comunidad.
+          </p>
+          <div class="book-actions">
+            <a href="/servicios/HRM_borrador_2.pdf" class="btn btn-primary" target="_blank" download="Del_Lazareto_San_Roque_al_Hospital_Ramos_Mejia.pdf">
+              📥 Descargar Libro Completo (PDF 14 MB)
+            </a>
+            <a href="/servicios/HRM_borrador_2.pdf" class="btn btn-outline-teal" target="_blank">
+              👁️ Leer en Línea ↗
+            </a>
+          </div>
+          <small class="book-license-note">© 2026. Editores: Dr. Nicolás Alonso – Dr. Martín Sívori. Obra histórica para consulta pública de pacientes, profesionales y la comunidad médica.</small>
+        </div>
+      </div>
+
+      <!-- PESTAÑAS INTERACTIVAS DE HISTORIA -->
+      <div class="history-tabs-container">
+        <div class="history-tabs-nav" id="history-tabs-nav">
+          <button class="history-tab-btn active" data-tab="nobel">
+            <span>🎖️</span> Premios Nobel en el Ramos
+          </button>
+          <button class="history-tab-btn" data-tab="cultura">
+            <span>🎭</span> Tango, Arte y Literatura
+          </button>
+          <button class="history-tab-btn" data-tab="memoria">
+            <span>🕊️</span> Memoria y Derechos Humanos
+          </button>
+          <button class="history-tab-btn" data-tab="directores">
+            <span>📜</span> Directores en la Historia
+          </button>
+        </div>
+
+        <!-- CONTENEDOR DINÁMICO DE LA PESTAÑA SELECCIONADA -->
+        <div class="history-tab-pane" id="history-tab-content">
+          <!-- Renderizado dinámicamente por main.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECCIÓN: CONTACTO (DIRECTORIO TELEFÓNICO Y UBICACIÓN UNO ABAJO DEL OTRO) -->
   <section id="contacto" class="section contacto-section">
     <!-- BLOQUE 1: DIRECTORIO TELEFÓNICO E INTERNOS -->
@@ -715,6 +792,7 @@
           <li><a href="#docencia">Docencia y Residencias (UBA)</a></li>
           <li><a href="#revista">Revista del Hospital</a></li>
           <li><a href="#galeria">Recorrido Fotográfico</a></li>
+          <li><a href="#historia">Historia, Cultura y Libro Oficial</a></li>
           <li><a href="#contacto">Contacto y Ubicación</a></li>
           <li><a href="/servicios/organigrama.html">Organigrama Institucional</a></li>
           <li><a href="/servicios/faq.html">Preguntas Frecuentes</a></li>
@@ -785,6 +863,23 @@
               <img id="modal-spec-plan" src="" alt="Plano de ubicación arquitectónica del servicio" />
               <p class="plan-caption">Pabellón y sector de atención en planta</p>
             </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN HISTÓRICA E HITOS PIONEROS (Extraído del Libro Oficial) -->
+        <div class="modal-history-section" id="modal-spec-history-block" style="display: none;">
+          <div class="modal-history-header">
+            <span class="history-badge">📜 Memoria e Historia Institucional</span>
+            <h3>Trayectoria y Aportes Científicos Pioneros</h3>
+          </div>
+          <p class="modal-history-origin" id="modal-spec-history-origin"></p>
+          <div class="modal-milestones-box" id="modal-spec-milestones-box" style="display: none;">
+            <h4>🌟 Hitos Pioneros del Servicio:</h4>
+            <ul class="milestones-list" id="modal-spec-milestones"></ul>
+          </div>
+          <div class="modal-figures-box" id="modal-spec-figures-box" style="display: none;">
+            <h4>👥 Maestros y Figuras Históricas:</h4>
+            <div class="figures-tags" id="modal-spec-figures"></div>
           </div>
         </div>
       </div>
