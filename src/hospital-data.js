@@ -9,7 +9,7 @@ export const HOSPITAL_DATA = {
     "founded": 1868,
     "originalName": "Lazareto San Roque",
     "director": "Dr. Hugo Aníbal Pandullo",
-    "subdirectora": "Fatima Diaz",
+    "subdirectora": "Dra. Fatima Diaz",
     "directorAdjuntoAdmin": "Nicolas Hugo Morato",
     "gerenteOperativoFinanciero": "Ximena Romero Sánchez",
     "authorities": [
@@ -22,7 +22,7 @@ export const HOSPITAL_DATA = {
       },
       {
         "role": "Subdirectora",
-        "name": "Fatima Diaz",
+        "name": "Dra. Fatima Diaz",
         "badge": "Subdirección",
         "icon": "👩‍⚕️",
         "desc": "Gestión asistencial continua, supervisión clínica hospitalaria y coordinación de divisiones asistenciales."
