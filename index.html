@@ -14,7 +14,7 @@
   <meta name="author" content="Hospital General de Agudos Dr. José María Ramos Mejía - GCABA" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
-  <link rel="canonical" href="https://hospitalramosmejia.gob.ar/" />
+  <link rel="canonical" href="https://hospitalramosmejia.netlify.app/" />
   <meta name="theme-color" content="#0b2545" />
 
   <!-- Geo & Local SEM Tags -->
@@ -28,10 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Hospital Ramos Mejía | Portal Institucional y Guía al Paciente" />
   <meta property="og:description"
-    content="Hospital General de Agudos Dr. José María Ramos Mejía. Guardia 24 horas, conmutador central 4127-0200, 60 especialidades médicas, turnos 147 y guía integral de atención comunitaria." />
-  <meta property="og:url" content="https://hospitalramosmejia.gob.ar/" />
+    content="Hospital General de Agudos Dr. José María Ramos Mejía. Guardia 24 horas, conmutador central 4127-0200, especialidades médicas, turnos 147 y guía integral de atención comunitaria." />
+  <meta property="og:url" content="https://hospitalramosmejia.netlify.app/" />
   <meta property="og:site_name" content="Hospital Ramos Mejía - GCABA" />
-  <meta property="og:image" content="https://hospitalramosmejia.gob.ar/hero.jpg" />
+  <meta property="og:image" content="https://hospitalramosmejia.netlify.app/hero.jpg" />
   <meta property="og:image:alt" content="Fachada del Hospital General de Agudos Dr. José María Ramos Mejía" />
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -39,8 +39,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hospital Ramos Mejía | Portal Institucional y Guía al Paciente" />
   <meta name="twitter:description"
-    content="Portal Oficial del Hospital Ramos Mejía - GCABA. Guardia 24hs, turnos médicos, 60 especialidades y directorio de contacto." />
-  <meta name="twitter:image" content="https://hospitalramosmejia.gob.ar/hero.jpg" />
+    content="Portal Oficial del Hospital Ramos Mejía - GCABA. Guardia 24hs, turnos médicos, especialidades y directorio de contacto." />
+  <meta name="twitter:image" content="https://hospitalramosmejia.netlify.app/hero.jpg" />
 
   <!-- Schema.org JSON-LD para Hospital & SEM -->
   <script type="application/ld+json">
@@ -49,9 +49,12 @@
     "@type": "Hospital",
     "name": "Hospital General de Agudos Dr. José María Ramos Mejía",
     "alternateName": "Hospital Ramos Mejía",
-    "url": "https://hospitalramosmejia.gob.ar/",
-    "logo": "https://hospitalramosmejia.gob.ar/logo.png",
-    "image": "https://hospitalramosmejia.gob.ar/hero.jpg",
+    "url": "https://hospitalramosmejia.netlify.app/",
+    "logo": "https://hospitalramosmejia.netlify.app/logo.png",
+    "image": "https://hospitalramosmejia.netlify.app/hero.jpg",
+    "sameAs": [
+      "https://www.instagram.com/hospitalgeneralramosmejia?cplk=NzVpdXkwbHF2MnY3"
+    ],
     "description": "Hospital público de alta complejidad de la Ciudad Autónoma de Buenos Aires, fundado en 1868. Guardia médica permanente de 24hs, 60 especialidades, centro universitario UBA e investigación clínica.",
     "telephone": "+54-11-4127-0200",
     "emergencyTelephone": "107",
@@ -129,7 +132,7 @@
     <div class="nav-container">
       <a href="#inicio" class="logo-link">
         <div class="logo">
-          <img src="/logo.png?v=2026.5" alt="Escudo Hospital Ramos Mejía" class="logo-img" />
+          <img src="/logo.png?v=2026.5" alt="Escudo Hospital Ramos Mejía" class="logo-img" width="52" height="52" />
           <div class="logo-text">
             <h1>Hospital Ramos Mejía</h1>
             <p>Hospital General de Agudos • GCABA</p>
@@ -160,7 +163,8 @@
   <!-- HERO PRINCIPAL -->
   <header id="inicio" class="hero">
     <div class="hero-bg">
-      <img src="/hero.jpg" alt="Fachada del Hospital General de Agudos Ramos Mejía" class="hero-img">
+      <img src="/hero.jpg" alt="Fachada del Hospital General de Agudos Ramos Mejía" class="hero-img"
+        fetchpriority="high" width="1600" height="900">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -330,7 +334,7 @@
       <div class="news-live-bar" id="news-live-bar">
         <div class="news-live-status">
           <span class="live-indicator-dot" id="news-live-dot"></span>
-          <span id="news-live-status-text">Sincronizando novedades en tiempo real...</span>
+          <span id="news-live-status-text" aria-live="polite">Sincronizando novedades en tiempo real...</span>
         </div>
         <div class="news-live-actions">
           <a href="https://www.instagram.com/hospitalgeneralramosmejia?cplk=NzVpdXkwbHF2MnY3" target="_blank"
@@ -370,7 +374,7 @@
             autocomplete="off" />
           <button id="clear-search" class="clear-btn" style="display: none;">✕</button>
         </div>
-        <div class="search-counter">
+        <div class="search-counter" aria-live="polite">
           Mostrando <span id="results-count">0</span> servicios
         </div>
       </div>
@@ -444,7 +448,8 @@
         </div>
       </div>
       <div class="split-image slide-in-right">
-        <img src="/fot/clinica.jpg?v=2026.2" alt="Pabellón del Área Programática" class="rounded-shadow-img" />
+        <img src="/fot/clinica.jpg?v=2026.2" alt="Pabellón del Área Programática" class="rounded-shadow-img"
+          loading="lazy" width="800" height="533" />
       </div>
     </div>
   </section>
@@ -569,7 +574,7 @@
           <div class="book-actions">
             <a href="/servicios/HRM_borrador_2.pdf" class="btn btn-primary" target="_blank"
               download="Del_Lazareto_San_Roque_al_Hospital_Ramos_Mejia.pdf">
-              📥 Descargar Libro Completo (PDF 14 MB)
+              📥 Descargar Libro Completo (PDF 26 MB)
             </a>
             <a href="/servicios/HRM_borrador_2.pdf" class="btn btn-outline-teal" target="_blank">
               👁️ Leer en Línea ↗
@@ -582,23 +587,23 @@
 
       <!-- PESTAÑAS INTERACTIVAS DE HISTORIA -->
       <div class="history-tabs-container">
-        <div class="history-tabs-nav" id="history-tabs-nav">
-          <button class="history-tab-btn active" data-tab="nobel">
+        <div class="history-tabs-nav" id="history-tabs-nav" role="tablist" aria-label="Secciones de historia hospitalaria">
+          <button class="history-tab-btn active" data-tab="nobel" role="tab" aria-selected="true">
             <span>🎖️</span> Premios Nobel en el Ramos
           </button>
-          <button class="history-tab-btn" data-tab="cultura">
+          <button class="history-tab-btn" data-tab="cultura" role="tab" aria-selected="false">
             <span>🎭</span> Tango, Arte y Literatura
           </button>
-          <button class="history-tab-btn" data-tab="memoria">
+          <button class="history-tab-btn" data-tab="memoria" role="tab" aria-selected="false">
             <span>🕊️</span> Memoria y Derechos Humanos
           </button>
-          <button class="history-tab-btn" data-tab="directores">
+          <button class="history-tab-btn" data-tab="directores" role="tab" aria-selected="false">
             <span>📜</span> Directores en la Historia
           </button>
         </div>
 
         <!-- CONTENEDOR DINÁMICO DE LA PESTAÑA SELECCIONADA -->
-        <div class="history-tab-pane" id="history-tab-content">
+        <div class="history-tab-pane" id="history-tab-content" role="tabpanel" aria-live="polite">
           <!-- Renderizado dinámicamente por main.js -->
         </div>
       </div>
@@ -705,7 +710,8 @@
     <div class="footer-container">
       <div class="footer-col brand-col">
         <div class="footer-brand">
-          <img src="/logo.png?v=2026.5" alt="Escudo Hospital Ramos Mejía" class="footer-logo">
+          <img src="/logo.png?v=2026.5" alt="Escudo Hospital Ramos Mejía" class="footer-logo" loading="lazy" width="46"
+            height="46">
           <div>
             <h3>Hospital Ramos Mejía</h3>
             <p>Hospital General de Agudos</p>

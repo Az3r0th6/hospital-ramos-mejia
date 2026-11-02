@@ -70,7 +70,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1244)",
       "email": "alergiahospitalramosmejia@gmail.com",
       "chief": "Dra. Agustina Zambernardi",
-      "location": "El consultorio externo Nº 112 se encuentra en el 1er piso del ala derecha del pabellón consultorios externos. .com",
+      "location": "El consultorio externo Nº 112 se encuentra en el 1er piso del ala derecha del pabellón consultorios externos.",
       "detailUrl": "/servicios/alergia.html",
       "historicalOrigin": "Creado en 1938 por el Dr. Julio Cruciani tras fundar el primer Consultorio de Asma público del país.",
       "pioneeringMilestones": [
@@ -95,7 +95,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1333 / 1335)",
       "email": "alimramos@gmail.com",
       "chief": "Lic. Graciela Gramisci",
-      "location": "El Servicio de Alimentación se encuentra en la planta baja del ala derecha del pabellón cirugía. El consultorio externo Nº 151 se encuentra en el ala izquierda del primer piso del pabellón de consultorios externos. .com",
+      "location": "El Servicio de Alimentación se encuentra en la planta baja del ala derecha del pabellón cirugía. El consultorio externo Nº 151 se encuentra en el ala izquierda del primer piso del pabellón de consultorios externos.",
       "detailUrl": "/servicios/alimentacion.html",
       "historicalOrigin": "Presente desde los primeros registros del Lazareto en 1869; sistema de autogestión nutricional consolidado en 1983.",
       "pioneeringMilestones": [
@@ -179,7 +179,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Conmutador)",
       "email": "comitebioeticaclinicarm@gmail.com",
       "chief": "",
-      "location": "El CBEHRM se encuentra ubicado en el Servicio de Salud Mental del Hospital Ramos Mejía. Las reuniones son el primer y tercer viernes de cada mes en el aula de Salud Mental. Email: Instagram: @comitebioetica_ramosmejia Formulario de consulta: &nbsp; CLICK AQUI",
+      "location": "El CBEHRM se encuentra ubicado en el Servicio de Salud Mental del Hospital Ramos Mejía. Las reuniones son el primer y tercer viernes de cada mes en el aula de Salud Mental. Instagram: @comitebioetica_ramosmejia",
       "detailUrl": "/servicios/bioeticaclinica.html"
     },
     {
@@ -191,7 +191,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1288)",
       "email": "codei_rm@yahoo.com.ar",
       "chief": "",
-      "location": "El Comité de Etica en Investigación (CEI) se encuentra en la planta baja del pabellón de Otorrinolaringología, al cual se accede por el pasillo derecho del hospital. Las reuniones son el primer y tercer miércoles de cada mes. .com.ar",
+      "location": "El Comité de Etica en Investigación (CEI) se encuentra en la planta baja del pabellón de Otorrinolaringología, al cual se accede por el pasillo derecho del hospital. Las reuniones son el primer y tercer miércoles de cada mes.",
       "detailUrl": "/servicios/bioeticainvestigacion.html"
     },
     {
@@ -230,7 +230,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1302)",
       "email": "ccvascular2014@gmail.com",
       "chief": "Dr. Jorge Cociolo",
-      "location": "El servicio y consultorio externo de Cirugia Cardiovascular se encuentra en el 1º piso del ala derecha del pabellon quirurgico. .com",
+      "location": "El servicio y consultorio externo de Cirugia Cardiovascular se encuentra en el 1º piso del ala derecha del pabellon quirurgico.",
       "detailUrl": "/servicios/cardiovascular.html",
       "historicalOrigin": "Instalado en el hospital en 1978 tras el cierre del Hospital Rawson, bajo la dirección del Dr. Miguel Bellizzi.",
       "pioneeringMilestones": [
@@ -283,7 +283,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1251 / 1245)",
       "email": "clinicamedicaramosmejia@gmail.com",
       "chief": "Dr. Rodolfo Fernández (Div. A) / Dr. Alberto Guida (Div. B) / Dr. Santiago Ilutovich (Div. C)",
-      "location": "La División A de Clínica Médica se encuentra en el 2º piso del pabellón propio que el servicio posee al cual se ingresa por el pasillo izquierdo del hospital. El consultorio externo Nº 143 a 146 se encuentra en el ala izquierda del primer piso del pabellon de consultorios externos. .com",
+      "location": "La División A de Clínica Médica se encuentra en el 2º piso del pabellón propio que el servicio posee al cual se ingresa por el pasillo izquierdo del hospital. El consultorio externo Nº 143 a 146 se encuentra en el ala izquierda del primer piso del pabellon de consultorios externos.",
       "detailUrl": "/servicios/clinica.html",
       "historicalOrigin": "Creado en 1892; organizado en históricas salas de estilo francés (Sala I, Sala XII, Sala XVI).",
       "pioneeringMilestones": [
@@ -310,7 +310,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1439)",
       "email": "codei_rm@yahoo.com.ar",
       "chief": "",
-      "location": "El Comité de Docencia se encuentra en la planta baja del pabellón de Otorrinolaringología, al cual se accede por el pasillo derecho del hospital. .com.ar",
+      "location": "El Comité de Docencia se encuentra en la planta baja del pabellón de Otorrinolaringología, al cual se accede por el pasillo derecho del hospital.",
       "detailUrl": "/servicios/codei.html"
     },
     {
@@ -437,7 +437,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1096 / 1233)",
       "email": "ramosmejiaepilepsia@gmail.com",
       "chief": "Dra. Silvia Kochen / Prof. Dr. Eduardo Seoane",
-      "location": "Unidad de Video - EEG: 1er piso. Sala de Neurología. Consultorios Externos: 1er piso. Consultorios 150, 151 y 156 .com",
+      "location": "Unidad de Video - EEG: 1er piso. Sala de Neurología. Consultorios Externos: 1er piso. Consultorios 150, 151 y 156.",
       "detailUrl": "/servicios/epilepsia.html",
       "historicalOrigin": "Integrado en el Centro de Neurociencias y Neurocirugía del Hospital Ramos Mejía.",
       "pioneeringMilestones": [
@@ -534,7 +534,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1287)",
       "email": "rabronberg@intramed.net",
       "chief": "",
-      "location": "Genética se encuentra en el segundo piso del pabellón quirúrgico. Email",
+      "location": "Genética se encuentra en el segundo piso del pabellón quirúrgico.",
       "detailUrl": "/servicios/genetica.html"
     },
     {
@@ -546,7 +546,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1256)",
       "email": "Geriatriaramosmejia@gmail.com",
       "chief": "Dra. Maya Sinjovich",
-      "location": "El Servicio de Geriatría se encuentra en el primer piso del pabellón de Clínica Medica. El Consultorio externo se encuentra en la puerta Nº 119 del primer piso del pabellon de consultorios externos. .com",
+      "location": "El Servicio de Geriatría se encuentra en el primer piso del pabellón de Clínica Medica. El Consultorio externo se encuentra en la puerta Nº 119 del primer piso del pabellon de consultorios externos.",
       "detailUrl": "/servicios/geriatria.html",
       "historicalOrigin": "Creada en 1979 por el Dr. Ángel Papeschi tras el cierre compulsivo del Hospital Martín Rodríguez durante la dictadura.",
       "pioneeringMilestones": [
@@ -647,7 +647,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1256)",
       "email": "hepatoramos@gmail.com",
       "chief": "",
-      "location": "El Grupo de Hepatología se encuentra en el consultorio Nro 114 del ala izquierda del pabellón de consultorios externos. Teléfono: Email",
+      "location": "El Grupo de Hepatología se encuentra en el consultorio Nro 114 del ala izquierda del pabellón de consultorios externos.",
       "detailUrl": "/servicios/hepatologia.html"
     },
     {
@@ -659,7 +659,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1251)",
       "email": "htaramosmejia@gmail.com",
       "chief": "Dr. Gustavo Carusso",
-      "location": "El Servicio de Hipertension Arterial se encuentra en el primer piso del pabellón Clínica Medica. El consultorio externo 125 de Hipertensión Arterial se encuentra en el primer piso ala izquierda del pabellón Consultorios Externos. .com",
+      "location": "El Servicio de Hipertension Arterial se encuentra en el primer piso del pabellón Clínica Medica. El consultorio externo 125 de Hipertensión Arterial se encuentra en el primer piso ala izquierda del pabellón Consultorios Externos.",
       "detailUrl": "/servicios/hipertensionarterial.html",
       "historicalOrigin": "Creada en 1994 por el Dr. Gustavo Carusso y el Dr. Luis Gioseffi en Clínica Médica.",
       "pioneeringMilestones": [
@@ -709,7 +709,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1251)",
       "email": "secretaria@hivramos.org.ar",
       "chief": "Prof. Dr. Marcelo H. Losso",
-      "location": "El Servicio de Inmunocomprometidos se encuentra en 2º piso del pabellon de Clinica Medica ingresando por el pasillo izquierdo del hospital. El consultorio externo Nº 154 y 155 se encuentra en 1º piso del pabellon de consultorios externos del hospital. .org.ar",
+      "location": "El Servicio de Inmunocomprometidos se encuentra en 2º piso del pabellon de Clinica Medica ingresando por el pasillo izquierdo del hospital. El consultorio externo Nº 154 y 155 se encuentra en 1º piso del pabellon de consultorios externos del hospital.",
       "detailUrl": "/servicios/inmunocomprometidos.html",
       "historicalOrigin": "Creada formalmente por Decreto 81/23 como continuidad del Grupo de Trabajo de 1997 vinculado a la Fundación IBIS.",
       "pioneeringMilestones": [
@@ -1071,7 +1071,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1234 / 1235)",
       "email": "ramosmejiaoncologia@gmail.com",
       "chief": "Dra. Alicia Elli",
-      "location": "El servicio de Oncología se encuentra en el subsuelo del pabellón de Diagnóstico por Imágenes al que se accede ORL/OFTALMOLOGÍA, se accede por el pasillo izquierdo del hospital. .com",
+      "location": "El servicio de Oncología se encuentra en el subsuelo del pabellón de Diagnóstico por Imágenes, al cual se accede por el pasillo izquierdo del hospital.",
       "detailUrl": "/servicios/oncologia.html",
       "historicalOrigin": "Iniciada en los años 50 con la División Terapia Radiante bajo el Dr. Maisa y el Dr. Eduardo Navarrine.",
       "pioneeringMilestones": [
@@ -1136,7 +1136,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1286)",
       "email": "reumatologiarm@gmail.com",
       "chief": "Prof. Dr. Eduardo Mario Kerzberg",
-      "location": "El Centro Nacional de Referencia en Osteoporosis se encuentra en la planta baja del pabellon de Clinica Medica. El consultorio externo Nº 128 y el consultorio de densitometria osea Nº 131 se encuentran en el ala izquierda del primer piso del pabellon de consultorios externos. .com",
+      "location": "El Centro Nacional de Referencia en Osteoporosis se encuentra en la planta baja del pabellon de Clinica Medica. El consultorio externo Nº 128 y el consultorio de densitometria osea Nº 131 se encuentran en el ala izquierda del primer piso del pabellon de consultorios externos.",
       "detailUrl": "/servicios/osteoporosis.html",
       "historicalOrigin": "Desarrollado en Reumatología; designado Centro de Referencia Municipal (2000) y Nacional (2001).",
       "pioneeringMilestones": [
@@ -1159,7 +1159,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1347)",
       "email": "citologiaramosmejia@gmail.com",
       "chief": "Dra. Laura Jufe (Patología) / Dra. Analía Filippini (Citología)",
-      "location": "Anatomia Patologica se encuentra en el pabellon propio que el servicio posee, al cual se accede ingresando al hospital por el pasillo izquierdo y dirigiendose luego al angulo que forman las calles Mexico y 24 de noviembre. Teléfonos: Anatomía patológica: 4127-0200 interno 1347 Citopatología: 4127-0200 interno 1346 Email de Citopatología",
+      "location": "Anatomia Patologica se encuentra en el pabellon propio que el servicio posee, al cual se accede ingresando al hospital por el pasillo izquierdo y dirigiendose luego al angulo que forman las calles Mexico y 24 de noviembre. Teléfonos: Anatomía patológica: 4127-0200 interno 1347 | Citopatología: 4127-0200 interno 1346.",
       "detailUrl": "/servicios/patologia.html",
       "historicalOrigin": "Iniciado en 1904; cátedra ejercida por Telémaco Susini, Joaquín Llambías, Pedro Elizalde y Christofredo Jakob.",
       "pioneeringMilestones": [
@@ -1238,7 +1238,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1265)",
       "email": "reumatologiarm@gmail.com",
       "chief": "Prof. Dr. Eduardo Mario Kerzberg",
-      "location": "El Centro Nacional de Referencia en Osteoporosis se encuentra en la planta baja del pabellon de Clinica Medica. El consultorio externo Nº 128 y el consultorio de densitometria osea Nº 131 se encuentran en el ala izquierda del primer piso del pabellon de consultorios externos. .com",
+      "location": "El Centro Nacional de Referencia en Osteoporosis se encuentra en la planta baja del pabellon de Clinica Medica. El consultorio externo Nº 128 y el consultorio de densitometria osea Nº 131 se encuentran en el ala izquierda del primer piso del pabellon de consultorios externos.",
       "detailUrl": "/servicios/reumatologia.html",
       "historicalOrigin": "Creado como Grupo de Trabajo el 18 de mayo de 1990 bajo la coordinación del Dr. Eduardo Kerzberg.",
       "pioneeringMilestones": [
@@ -1274,7 +1274,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1429 / 1441)",
       "email": "ramosmejia_serviciosocial@buenosaires.gov.ar",
       "chief": "Lic. María Angélica Capellino",
-      "location": "El Servicio Social se encuentra en la planta baja del ala derecha del primer pabellon del hospital. .gov.ar",
+      "location": "El Servicio Social se encuentra en la planta baja del ala derecha del primer pabellon del hospital.",
       "detailUrl": "/servicios/serviciosocial.html",
       "historicalOrigin": "Iniciado el 2 de septiembre de 1931 con la designación de Mary Surano en la Maternidad Eliseo Cantón.",
       "pioneeringMilestones": [
@@ -1350,7 +1350,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1429 / 1441)",
       "email": "ramosmejia_serviciosocial@buenosaires.gov.ar",
       "chief": "Dr. Daniel Prieto",
-      "location": "El servicio de Terapia Intensiva se encuentra en el cuarto piso del ala derecha del pabellon cirugia. .gov.ar",
+      "location": "El servicio de Terapia Intensiva se encuentra en el cuarto piso del ala derecha del pabellon cirugia.",
       "detailUrl": "/servicios/uti.html",
       "historicalOrigin": "Surgido tras la epidemia de poliomielitis de 1957; Unidad de Terapia Intensiva polivalente formalizada en 1974.",
       "pioneeringMilestones": [

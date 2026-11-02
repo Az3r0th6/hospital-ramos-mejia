@@ -173,6 +173,31 @@ function getInstagramOfficialCard() {
   };
 }
 
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function openModalEl(modal) {
+  if (!modal) return;
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  modal.setAttribute('aria-modal', 'true');
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeModalEl(modal) {
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.removeAttribute('aria-modal');
+}
+
 function renderNewsCards(container, items) {
   container.innerHTML = '';
   items.forEach(item => {
@@ -187,18 +212,22 @@ function renderNewsCards(container, items) {
       ? 'target="_blank" rel="noopener noreferrer"'
       : '';
 
+    const safeHref = /^https?:\/\/|^#[a-zA-Z0-9_-]+|^\/[a-zA-Z0-9_./-]+/.test(item.link || '')
+      ? escapeHtml(item.link)
+      : '#noticias';
+
     card.innerHTML = `
       <div class="news-meta">
         <div class="news-tag-wrap">
-          <span class="news-tag ${item.isInstagram ? 'news-tag-ig' : ''}">${item.tag}</span>
+          <span class="news-tag ${item.isInstagram ? 'news-tag-ig' : ''}">${escapeHtml(item.tag)}</span>
           ${liveBadge}
         </div>
-        <span class="news-date">📅 ${item.date}</span>
+        <span class="news-date">📅 ${escapeHtml(item.date)}</span>
       </div>
-      <h3 class="news-title">${item.title}</h3>
-      <p class="news-summary">${item.summary}</p>
+      <h3 class="news-title">${escapeHtml(item.title)}</h3>
+      <p class="news-summary">${escapeHtml(item.summary)}</p>
       <div class="news-footer">
-        <a href="${item.link}" class="news-link" ${targetAttrs}>${item.linkText || 'Más información →'}</a>
+        <a href="${safeHref}" class="news-link" ${targetAttrs}>${escapeHtml(item.linkText || 'Más información →')}</a>
       </div>
     `;
 
@@ -689,7 +718,7 @@ function openSpecialtyModal(spec) {
     }
   }
 
-  modal.classList.add('active');
+  openModalEl(modal);
 }
 
 /* ==========================================================================
@@ -833,9 +862,12 @@ function initGallery() {
   HOSPITAL_DATA.gallery.forEach(item => {
     const div = document.createElement('div');
     div.className = 'gallery-item';
+    div.setAttribute('role', 'button');
+    div.setAttribute('tabindex', '0');
+    div.setAttribute('aria-label', `Ampliar fotografía: ${item.title}`);
 
     div.innerHTML = `
-      <img src="${item.src}" alt="${item.title}" loading="lazy" />
+      <img src="${item.src}" alt="${item.title}" loading="lazy" width="400" height="260" />
       <div class="gallery-overlay">
         <h4>${item.title}</h4>
         <p>${item.desc}</p>
@@ -843,11 +875,19 @@ function initGallery() {
       </div>
     `;
 
-    div.addEventListener('click', () => {
+    const openItem = () => {
       lightboxImg.src = item.src;
       lightboxTitle.textContent = item.title;
       lightboxDesc.textContent = item.desc;
-      lightbox.classList.add('active');
+      openModalEl(lightbox);
+    };
+
+    div.addEventListener('click', openItem);
+    div.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openItem();
+      }
     });
 
     container.appendChild(div);
@@ -855,10 +895,10 @@ function initGallery() {
 
   if (closeLightbox && lightbox) {
     closeLightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
+      closeModalEl(lightbox);
     });
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) lightbox.classList.remove('active');
+      if (e.target === lightbox) closeModalEl(lightbox);
     });
   }
 }
@@ -871,9 +911,9 @@ function initModals() {
   const modalSpec = document.getElementById('modal-specialty');
   const closeSpecBtn = document.getElementById('close-specialty-modal');
   if (modalSpec && closeSpecBtn) {
-    closeSpecBtn.addEventListener('click', () => modalSpec.classList.remove('active'));
+    closeSpecBtn.addEventListener('click', () => closeModalEl(modalSpec));
     modalSpec.addEventListener('click', (e) => {
-      if (e.target === modalSpec) modalSpec.classList.remove('active');
+      if (e.target === modalSpec) closeModalEl(modalSpec);
     });
   }
 
@@ -886,23 +926,23 @@ function initModals() {
     openDonarBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        modalDonar.classList.add('active');
+        openModalEl(modalDonar);
       });
     });
 
     if (closeDonarBtn) {
-      closeDonarBtn.addEventListener('click', () => modalDonar.classList.remove('active'));
+      closeDonarBtn.addEventListener('click', () => closeModalEl(modalDonar));
     }
 
     modalDonar.addEventListener('click', (e) => {
-      if (e.target === modalDonar) modalDonar.classList.remove('active');
+      if (e.target === modalDonar) closeModalEl(modalDonar);
     });
   }
 
   // Close modals on ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+      document.querySelectorAll('.modal-overlay.active').forEach(m => closeModalEl(m));
     }
   });
 
@@ -1082,8 +1122,12 @@ function initHospitalHistory() {
   // Bind click events on tab buttons
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       activeTab = btn.dataset.tab;
       renderTab(activeTab);
     });

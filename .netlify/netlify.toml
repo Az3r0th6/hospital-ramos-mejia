@@ -1,16 +1,15 @@
+functionsDirectory = "C:\\Users\\tinch\\OneDrive\\Escritorio\\Hospital Ramos Mejia\\netlify\\functions"
+functionsDirectoryOrigin = "default"
 redirectsOrigin = "config"
 plugins = []
 headers = []
-
-[functions]
-
-[functions."*"]
 
 [build]
 publish = "C:\\Users\\tinch\\OneDrive\\Escritorio\\Hospital Ramos Mejia\\dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
+functions = "C:\\Users\\tinch\\OneDrive\\Escritorio\\Hospital Ramos Mejia\\netlify\\functions"
 
 [build.environment]
 
@@ -25,6 +24,22 @@ command = "npm run build"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
+
+[[redirects]]
+from = "/api/live-news"
+to = "/.netlify/functions/live-news"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
 
 [[redirects]]
 from = "/*"
