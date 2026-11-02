@@ -326,8 +326,25 @@
         </p>
       </div>
 
+      <!-- Barra de Conexión en Tiempo Real (Salud GCABA + Red Científica + Instagram Oficial) -->
+      <div class="news-live-bar" id="news-live-bar">
+        <div class="news-live-status">
+          <span class="live-indicator-dot" id="news-live-dot"></span>
+          <span id="news-live-status-text">Sincronizando novedades en tiempo real...</span>
+        </div>
+        <div class="news-live-actions">
+          <a href="https://www.instagram.com/hospitalgeneralramosmejia?cplk=NzVpdXkwbHF2MnY3" target="_blank"
+            rel="noopener noreferrer" class="btn-news-ig" title="Ver últimas publicaciones en Instagram Oficial">
+            <span>📸 @hospitalgeneralramosmejia ↗</span>
+          </a>
+          <button type="button" class="btn-news-refresh" id="btn-refresh-news" title="Actualizar noticias en vivo">
+            🔄 Actualizar ahora
+          </button>
+        </div>
+      </div>
+
       <div class="news-grid" id="news-container">
-        <!-- Renderizado dinámico desde hospital-data.js -->
+        <!-- Renderizado dinámico y en vivo desde main.js -->
       </div>
     </div>
   </section>
