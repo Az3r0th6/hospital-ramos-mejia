@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNews();
   initSpecialties();
   initPatientGuides();
-  initJournal();
   initDirectory();
   initGallery();
   initHospitalHistory();
@@ -65,7 +64,6 @@ function initNavbar() {
     'especialidades',
     'tramites',
     'docencia',
-    'revista',
     'galeria',
     'historia',
     'contacto'
@@ -462,78 +460,6 @@ function initPatientGuides() {
 }
 
 /* ==========================================================================
-   REVISTA CIENTÍFICA (ACTUALIZADA 2026)
-   ========================================================================== */
-function initJournal() {
-  const container = document.getElementById('journal-container');
-  if (!container || !HOSPITAL_DATA || !HOSPITAL_DATA.journalEditions) return;
-
-  container.innerHTML = '';
-  HOSPITAL_DATA.journalEditions.forEach(ed => {
-    const item = document.createElement('div');
-    item.className = `journal-card ${ed.isOpenCall ? 'journal-current-year' : ''}`;
-
-    let articlesHtml = ed.articles.map(a => `
-      <li>
-        <strong>${a.title}</strong>
-        <span class="art-authors">✍️ ${a.authors}</span>
-      </li>
-    `).join('');
-
-    const awardNotice = ed.awardInfo ? `
-      <div class="journal-award-notice">
-        ${ed.awardInfo}
-      </div>
-    ` : '';
-
-    const actionButton = ed.isOpenCall ? `
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="mailto:codei_rm@yahoo.com.ar?subject=Envio%20de%20Trabajo%20Revista%202026" class="btn btn-sm btn-primary">
-          📤 Enviar Manuscrito 2026
-        </a>
-      </div>
-    ` : `
-      <a href="${ed.downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark">
-        📥 Descargar Volumen
-      </a>
-    `;
-
-    item.innerHTML = `
-      <div class="journal-card-top">
-        <div>
-          <h4>${ed.volume} (${ed.year})</h4>
-          <span class="journal-status-pill ${ed.isOpenCall ? 'pulse-pill' : ''}">${ed.status}</span>
-        </div>
-        ${actionButton}
-      </div>
-      ${awardNotice}
-      <ul class="journal-articles">
-        ${articlesHtml}
-      </ul>
-    `;
-
-    container.appendChild(item);
-  });
-
-  // Buscador interactivo a LILACS / BVS con motor iAHx (Apache Solr)
-  const lilacsForm = document.getElementById('lilacs-search-form');
-  const lilacsInput = document.getElementById('lilacs-query-input');
-  if (lilacsForm && lilacsInput) {
-    lilacsForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const val = lilacsInput.value.trim();
-      let query = '"Hospital Ramos Mejía"';
-      if (val) {
-        query += ` AND ${val}`;
-      }
-      const encodedQuery = encodeURIComponent(query);
-      const url = `https://pesquisa.bvsalud.org/portal/?q=${encodedQuery}&filter%5Bdb%5D%5B%5D=LILACS&sort=YEAR_DESC`;
-      window.open(url, '_blank', 'noopener,noreferrer');
-    });
-  }
-}
-
-/* ==========================================================================
    DIRECTORY & PHONE SEARCH
    ========================================================================== */
 // Cifrado y descifrado de correos anti-spambots
@@ -712,24 +638,6 @@ function initModals() {
     });
   }
 
-  // Reglamento 2026 Modal
-  const modalReglamento = document.getElementById('modal-reglamento');
-  const openReglamentoBtn = document.getElementById('btn-open-reglamento');
-  const closeReglamentoBtn = document.getElementById('close-reglamento-modal');
-
-  if (modalReglamento && openReglamentoBtn) {
-    openReglamentoBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalReglamento.classList.add('active');
-    });
-  }
-  if (modalReglamento && closeReglamentoBtn) {
-    closeReglamentoBtn.addEventListener('click', () => modalReglamento.classList.remove('active'));
-    modalReglamento.addEventListener('click', (e) => {
-      if (e.target === modalReglamento) modalReglamento.classList.remove('active');
-    });
-  }
-
   // Close modals on ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -783,7 +691,7 @@ function initDynamicInstitutionData() {
 
   const newsDesc = document.getElementById('news-section-desc');
   if (newsDesc) {
-    newsDesc.textContent = `Información actualizada al corriente año ${currentYear}: convocatorias académicas, mejoras asistenciales y programas comunitarios de salud.`;
+    newsDesc.textContent = `Información actualizada al corriente año ${currentYear}: formación académica, mejoras asistenciales y programas comunitarios de salud.`;
   }
 
   const navNewsLink = document.getElementById('nav-news-link');
@@ -795,40 +703,6 @@ function initDynamicInstitutionData() {
   const heroTagYear = document.getElementById('hero-tag-year');
   if (heroTagYear) {
     heroTagYear.textContent = `Sistema de Salud Pública • Ciudad de Buenos Aires • Actualizado ${currentYear}`;
-  }
-
-  // 3. Sección Revista del Hospital
-  const journalTitle = document.getElementById('journal-section-title');
-  if (journalTitle) journalTitle.textContent = `Revista del Hospital Ramos Mejía (Año ${currentYear})`;
-
-  const journalBannerVolume = document.getElementById('journal-banner-volume');
-  if (journalBannerVolume) {
-    journalBannerVolume.textContent = `Convocatoria Abierta • Volumen XXVIII (${currentYear}) y Premio Bienal del Hospital`;
-  }
-
-  const journalBannerText = document.getElementById('journal-banner-text');
-  if (journalBannerText) {
-    journalBannerText.innerHTML = `Se encuentra abierta la recepción de manuscritos, artículos originales, revisiones y casos clínicos para la edición ${currentYear}. Los trabajos presentados optan por el <strong>"Premio Revista del Hospital Ramos Mejía"</strong>, que se otorgará en diciembre de ${currentYear} durante los actos conmemorativos del Día del Médico.`;
-  }
-
-  const journalBtnGuidelines = document.getElementById('btn-open-reglamento');
-  if (journalBtnGuidelines) {
-    journalBtnGuidelines.textContent = `📜 Ver Pautas de Publicación ${currentYear}`;
-  }
-
-  const journalMailLinks = document.querySelectorAll('.journal-submit-email');
-  journalMailLinks.forEach(link => {
-    link.href = `mailto:codei_rm@yahoo.com.ar?subject=Envio%20de%20Trabajo%20Cientifico%20-%20Revista%20Ramos%20Mejia%20${currentYear}`;
-  });
-
-  const modalAwardTitle = document.getElementById('modal-award-title');
-  if (modalAwardTitle) {
-    modalAwardTitle.textContent = `Premio Bienal "Revista del Hospital Ramos Mejía" ${currentYear}`;
-  }
-
-  const modalAwardBadge = document.getElementById('modal-reglamento-badge');
-  if (modalAwardBadge) {
-    modalAwardBadge.textContent = `Reglamento Oficial ${currentYear}`;
   }
 
   const currentYearSpan = document.getElementById('current-year');

@@ -733,7 +733,7 @@ export const HOSPITAL_DATA = {
       "phone": "4127-0200 (Int. 1439)",
       "email": "",
       "chief": "",
-      "location": "Comité Organizador de las Jornadas Multidisciplinarias y de Enfermería del Hospital Ramos Mejía (Año 2026). Sede: Aula Magna y Auditorio Central. Entrega del Premio Bienal de la Revista del Hospital. Informes e inscripciones en la Secretaría del CODEI (Tel: 4127-0200 Int. 1439).",
+      "location": "Comité Organizador de las Jornadas Multidisciplinarias y de Enfermería del Hospital Ramos Mejía (Año 2026). Sede: Aula Magna y Auditorio Central. Informes e inscripciones en la Secretaría del CODEI (Tel: 4127-0200 Int. 1439).",
       "detailUrl": "/servicios/jornadas.html"
     },
     {
@@ -1252,18 +1252,6 @@ export const HOSPITAL_DATA = {
         "Dr. Efraín Huberman",
         "Dr. Víctor Hoyos Ibáñez"
       ]
-    },
-    {
-      "id": "revista",
-      "file": "revista.html",
-      "title": "Revista del Hospital Ramos Mejía",
-      "category": "Institucional y Docencia",
-      "planImg": "",
-      "phone": "4127-0200 (Int. 1439)",
-      "email": "",
-      "chief": "",
-      "location": "",
-      "detailUrl": "/servicios/revista.html"
     },
     {
       "id": "ryc",
@@ -1833,74 +1821,6 @@ export const HOSPITAL_DATA = {
       "desc": "Cuna de maestros de la cirugía argentina como Enrique y Ricardo Finochietto."
     }
   ],
-  "journalEditions": [
-    {
-      "volume": "Volumen XXVIII - Convocatoria Abierta",
-      "year": "2026",
-      "status": "Edición en Curso (Año 2026)",
-      "isOpenCall": true,
-      "awardInfo": "🏆 Postulación abierta al PREMIO BIENAL REVISTA HOSPITAL RAMOS MEJÍA 2026 (Entrega: Diciembre 2026 - Día del Médico)",
-      "downloadUrl": "/servicios/revista.html",
-      "articles": [
-        {
-          "title": "Innovación en cirugía mínimamente invasiva y protocolos de recuperación acelerada postquirúrgica (ERAS)",
-          "authors": "División Cirugía General A y B, Servicio de Anestesiología"
-        },
-        {
-          "title": "Evaluación del impacto del programa de estimulación temprana en el neurodesarrollo en Centros de Salud Comunitarios (CeSAC 11 y 45)",
-          "authors": "Área Programática y Servicio de Psicopedagogía"
-        },
-        {
-          "title": "Buenas Prácticas Clínicas (GCP) y procedimientos éticos en investigación biomédica: Guía 2026",
-          "authors": "Comité de Ética en Investigación (CEI) - Hospital Ramos Mejía"
-        }
-      ]
-    },
-    {
-      "volume": "Volumen XXVII - Investigaciones Asistenciales",
-      "year": "2024 - 2025",
-      "status": "Edición Publicada",
-      "downloadUrl": "https://1drv.ms/f/c/7343c1a96494fc07/Egf8lGSpwUMggHP1BgAAAAABlOpjNqFoVU6bPmgdJNlPUw?e=IEh6WM",
-      "articles": [
-        {
-          "title": "Abordaje endovascular y tiempos de ventana en el ACV isquémico agudo: experiencia del Centro de Stroke",
-          "authors": "Kim L., Alet M., Claverie S., González L., Rey R.C."
-        },
-        {
-          "title": "Optimización del uso de antimicrobianos en Unidades de Cuidados Críticos y Terapia Intensiva",
-          "authors": "Comité de Control de Infecciones y Servicio de Farmacia"
-        }
-      ]
-    },
-    {
-      "volume": "Volumen XXV - Nº 1",
-      "year": "2022",
-      "status": "Edición Electrónica",
-      "downloadUrl": "https://1drv.ms/f/c/7343c1a96494fc07/Egf8lGSpwUMggHP1BgAAAAABlOpjNqFoVU6bPmgdJNlPUw?e=IEh6WM",
-      "articles": [
-        {
-          "title": "Percepciones y prácticas acerca de la estimulación del lenguaje que refieren cuidadores en el Área Programática",
-          "authors": "Drault Boedo M.G., Rubio Domínguez M.G."
-        }
-      ]
-    },
-    {
-      "volume": "Volumen XXV - Nº 1",
-      "year": "2021",
-      "status": "Edición Electrónica",
-      "downloadUrl": "https://1drv.ms/f/c/7343c1a96494fc07/Egf8lGSpwUMggHPvBgAAAAABtPdW5XblQ5uCJlET9nz16w?e=gnAQJG",
-      "articles": [
-        {
-          "title": "Trastorno del Espectro Autista: Características y abordaje interdisciplinario",
-          "authors": "Almirón A.B., Brandes D., Drault Boedo M.G. y col."
-        },
-        {
-          "title": "Atención nutricional y seguimiento en pacientes internados de alta complejidad",
-          "authors": "Calegari M. Lara, Vieytes Lucía M."
-        }
-      ]
-    }
-  ],
   "patientGuides": [
     {
       "id": "turnos",
@@ -1953,15 +1873,6 @@ export const HOSPITAL_DATA = {
     }
   ],
   "news": [
-    {
-      "id": "noticia-1",
-      "date": "10 de Septiembre de 2026",
-      "tag": "Investigación y Docencia",
-      "title": "Convocatoria Abierta 2026: Presentación de Trabajos y Premio Bienal Revista del Hospital",
-      "summary": "El Comité de Docencia e Investigación (CODEI) convoca a todos los profesionales de la salud a postular sus manuscritos científicos para el Volumen XXVIII y participar por el Premio Bienal 2026, a entregarse en diciembre.",
-      "link": "#revista",
-      "isInternal": true
-    },
     {
       "id": "noticia-2",
       "date": "28 de Agosto de 2026",

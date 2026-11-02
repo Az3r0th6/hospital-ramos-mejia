@@ -9,7 +9,7 @@
 
 Portal web institucional moderno, dinámico y accesible para el **Hospital General de Agudos Dr. José María Ramos Mejía**, dependiente del Ministerio de Salud del Gobierno de la Ciudad Autónoma de Buenos Aires (GCABA).
 
-Este desarrollo centraliza los servicios asistenciales, la guía de trámites y turnos para el paciente, el buscador de más de 60 especialidades con planos de ubicación, el directorio telefónico de internos, las actividades de docencia e investigación universitaria (UBA / CODEI) y la revista científica del hospital.
+Este desarrollo centraliza los servicios asistenciales, la guía de trámites y turnos para el paciente, el buscador de más de 60 especialidades con planos de ubicación, el directorio telefónico de internos, las actividades de docencia e investigación universitaria (UBA / CODEI) y el recorrido histórico-patrimonial del hospital.
 
 ---
 
@@ -32,7 +32,7 @@ Este desarrollo centraliza los servicios asistenciales, la guía de trámites y 
 
 - 🚑 **Barra Permanente de Urgencias y Emergencias:**
   - Información de Guardia Médica 24hs (Gral. Urquiza 609).
-  - Conexión directa con SAME 107 y conmutador central (4127-0200).
+  - Conexión directa con SAME 107, conmutador central (4127-0200) e Instagram Oficial del hospital.
   - Canales de turnos: Línea 147 (CABA), 0800-999-2727 (PBA) y chatbot BOTI.
 - 🩺 **Buscador y Filtrado de 60+ Especialidades Médicas:**
   - Búsqueda en tiempo real por nombre, servicio, ubicación o jefatura.
@@ -47,9 +47,7 @@ Este desarrollo centraliza los servicios asistenciales, la guía de trámites y 
   - Requisitos de atención, canales para solicitar turnos, internación, derechos del paciente y servicio de hemoterapia / donación de sangre.
 - 📚 **Docencia, Investigación y Residencias (UBA / CODEI):**
   - Información sobre la Unidad Docente Hospitalaria (UDH), residencias y concurrencias médicas.
-  - Ediciones históricas y actuales de la **Revista del Hospital Ramos Mejía**.
-  - Convocatoria al *Premio Bienal del Hospital Ramos Mejía* con reglamento oficial y recepción de manuscritos.
-  - Buscador integrado a la base de datos bibliográfica **LILACS / BVS** mediante motor Apache Solr (iAHx).
+  - Comité de Ética en Investigación (CEI) y Comité de Bioética Clínica.
 - 📞 **Directorio Telefónico con Protección Anti-Spam:**
   - Tabla interactiva de internos telefónicos y correos electrónicos.
   - Cifrado en Base64 de las casillas de email para evitar bots indexadores y spam, con copiado en un clic y enlace directo.
@@ -142,9 +140,6 @@ Todos los datos dinámicos (especialidades, números de teléfono, jefaturas, no
 
 ### 2. Protección de Correos Electrónicos
 Para prevenir el raspado automático (*scraping*) por motores de spam, las direcciones de correo institucional se almacenan codificadas y se descifran exclusivamente mediante interacción del usuario, ofreciendo copiado automático y apertura del cliente de correo nativo.
-
-### 3. Integración Bibliográfica LILACS
-El portal incluye un formulario de búsqueda contextualizado que consulta en tiempo real el acervo científico del Hospital Ramos Mejía indexado en la Biblioteca Virtual en Salud (BVS) y LILACS utilizando el motor *iAHx*.
 
 ---
 
